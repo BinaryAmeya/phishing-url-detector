@@ -1,3 +1,13 @@
+import sys
+import os
+
+# Force add project root to Python path (works locally + Streamlit Cloud)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
+
+from src.predict import predict_url
+
 import streamlit as st
 from src.predict import predict_url
 
